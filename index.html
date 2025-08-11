@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jake Edmonstone</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jake Edmonstone</title>
+  <style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:system-ui,sans-serif;line-height:1.6;background:#fefefe;color:#222;max-width:1000px;margin:auto;padding:2rem 1.5rem}
+  header{border-bottom:1px solid #eee;padding-bottom:1.5rem;margin-bottom:2rem}
+  .header-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  h1{font-size:2.2rem}
+  .tabs{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+  .tab{background:transparent;border:1px solid #444;padding:.4rem .8rem;cursor:pointer;font-size:1rem;border-radius:4px;transition:background .2s,color .2s}
+  .tab:hover{background:#eee;color:#000}
+  .tab.active{background:#444;color:#fff}
+  .section{display:none}
+  .section.active{display:block}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+  article{border:1px solid #ddd;padding:1rem;border-radius:6px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  article img{max-width:100%;border-radius:4px;height:auto;display:block}
+  .header-links{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;font-size:.95rem}
+  .header-links a{text-decoration:none;color:#333;font-weight:500;padding:.4em .8em;border:1px solid #ccc;border-radius:4px;transition:background .2s,color .2s}
+  .header-links a:hover{background:#eee;color:#000}
+  ul{padding-left:1.2rem}
+  li{margin-bottom:.5rem}
+  main{contain:content}
+  </style>
   <body>
     <header>
       <div class="header-top">
@@ -19,10 +38,9 @@
         </ul>
       </div>
 
-      <nav class="tabs">
-        <button class="tab active" data-target="about">About</button>
-        <button class="tab" data-target="projects">Projects</button>
-        <!-- <button class="tab" data-target="publications">Publications</button> -->
+      <nav class="tabs" role="tablist">
+        <button class="tab active" data-target="about" role="tab" aria-controls="about" aria-selected="true">About</button>
+        <button class="tab" data-target="projects" role="tab" aria-controls="projects" aria-selected="false">Projects</button>
       </nav>
     </header>
 
@@ -32,13 +50,12 @@
         <p>Hi, I'm Jake Edmonstone, a third year pure mathematics and computer science student at the University of Waterloo</p>
       </section>
 
-      <section id="projects" class="section">
+      <section id="projects" class="section" hidden>
         <h2>Projects</h2>
-
         <div class="grid">
           <article>
             <h3><a href="https://github.com/jake-edmonstone/Chess">Chess</a></h3>
-            <img src="images/chess_demo.gif" alt="Chess project demo">
+            <img src="images/chess_demo.gif" alt="Chess project demo" loading="lazy" decoding="async" width="640" height="360">
             <p>A fully functional chess game in C++ using OOP, with four difficulty levels and modular structure.</p>
           </article>
 
@@ -49,23 +66,30 @@
 
           <article>
             <h3><a href="https://github.com/jake-edmonstone/Gravity-and-Collision-Simulator">Gravity and Collision Simulator</a></h3>
-            <img src="images/balls_demo.gif" alt="Bouncing balls demo">
+            <img src="images/balls_demo.gif" alt="Bouncing balls demo" loading="lazy" decoding="async" width="640" height="360">
             <p>Simulates bouncing balls using vector math and collision detection in 2D space. Written in Python.</p>
           </article>
 
           <article>
             <h3><a href="https://github.com/jake-edmonstone/Conway-s-Game-Of-Life">Game of Life</a></h3>
-            <img src="images/life_demo.gif" alt="Game of Life demo">
+            <img src="images/life_demo.gif" alt="Game of Life demo" loading="lazy" decoding="async" width="640" height="360">
             <p>Conway’s Game of Life in Python using 2D arrays and stateful logic to evolve the grid over time.</p>
           </article>
         </div>
       </section>
-
-      <!-- <section id="publications" class="section"> -->
-      <!--   <h2>Publications</h2> -->
-      <!--   <p>None yet — check back soon.</p> -->
-      <!-- </section> -->
     </main>
-    <script src="script.js"></script>
+
+    <script>
+    const tabs=[...document.querySelectorAll(".tab")];
+    const sections=[...document.querySelectorAll(".section")];
+    tabs.forEach(tab=>{
+      tab.addEventListener("click",()=>{
+        tabs.forEach(t=>{t.classList.remove("active");t.setAttribute("aria-selected","false")});
+        sections.forEach(s=>{s.classList.remove("active");s.hidden=true});
+        tab.classList.add("active");tab.setAttribute("aria-selected","true");
+        const el=document.getElementById(tab.dataset.target);el.classList.add("active");el.hidden=false;
+      });
+    });
+    </script>
   </body>
 </html>
