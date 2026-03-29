@@ -1,106 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jake Edmonstone</title>
+  <meta name="description" content="Jake Edmonstone — fourth-year Pure Mathematics and Computer Science student at the University of Waterloo. Projects, course notes, and contact.">
+  <meta property="og:title" content="Jake Edmonstone">
+  <meta property="og:description" content="Portfolio of Jake Edmonstone, Pure Math and CS student at UWaterloo.">
+  <meta property="og:url" content="https://jake-edmonstone.github.io/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>J</text></svg>">
   <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:system-ui,sans-serif;line-height:1.6;background:#fefefe;color:#222;max-width:1000px;margin:auto;padding:2rem 1.5rem}
-  header{border-bottom:1px solid #eee;padding-bottom:1.5rem;margin-bottom:2rem}
-  .header-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-  h1{font-size:2.2rem}
-  .tabs{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
-  .tab{background:transparent;border:1px solid #444;padding:.4rem .8rem;cursor:pointer;font-size:1rem;border-radius:4px;transition:background .2s,color .2s}
-  .tab:hover{background:#eee;color:#000}
-  .tab.active{background:#444;color:#fff}
-  .section{display:none}
-  .section.active{display:block}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
-  article{border:1px solid #ddd;padding:1rem;border-radius:6px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.05)}
-  article img{max-width:100%;border-radius:4px;height:auto;display:block}
-  .header-links{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;font-size:.95rem}
-  .header-links a{text-decoration:none;color:#333;font-weight:500;padding:.4em .8em;border:1px solid #ccc;border-radius:4px;transition:background .2s,color .2s}
-  .header-links a:hover{background:#eee;color:#000}
-  ul{padding-left:1.2rem}
-  li{margin-bottom:.5rem}
-  main{contain:content}
+    * { margin: 0; padding: 0; box-sizing: border-box }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #fefefe;
+      color: #222;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+    }
+    header { border-bottom: 1px solid #eee; padding-bottom: 1.5rem; margin-bottom: 2rem }
+    .header-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem }
+    h1 { font-size: 2.2rem }
+    .tabs { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem }
+    .tab {
+      background: transparent;
+      border: 1px solid #444;
+      padding: .4rem .8rem;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: background .2s, color .2s;
+    }
+    .tab:hover { background: #eee; color: #000 }
+    .tab.active { background: #444; color: #fff }
+    .section { display: none }
+    .section.active { display: block }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    article {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 1px 3px rgba(0,0,0,.05);
+    }
+    article img, article video { max-width: 100%; border-radius: 4px; height: auto; display: block }
+    @media (prefers-reduced-motion: reduce) {
+      article video { display: none }
+    }
+    .header-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .75rem;
+      font-size: .95rem;
+    }
+    .header-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: .4em .8em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      transition: background .2s, color .2s;
+    }
+    .header-links a:hover { background: #eee; color: #000 }
+    ul { padding-left: 1.2rem }
+    li { margin-bottom: .5rem }
+    main { contain: content }
+    .notes-list { list-style: none; padding-left: 0 }
+    .notes-list li { margin-bottom: .75rem }
+    .notes-list a { font-size: 1.1rem }
+    .file-meta { color: #666; font-size: .85rem }
   </style>
-  <body>
-    <header>
-      <div class="header-top">
-        <h1>Jake Edmonstone</h1>
-        <ul class="header-links">
-          <li><a href="mailto:jbedmons@uwaterloo.ca" title="Email">Email</a></li>
-          <li><a href="https://github.com/jake-edmonstone" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/jake-edmonstone" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">Résumé</a></li>
-          <li><a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a></li>
-        </ul>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <h1>Jake Edmonstone</h1>
+      <ul class="header-links">
+        <li><a href="mailto:jbedmons@uwaterloo.ca" title="Email">Email</a></li>
+        <li><a href="https://github.com/jake-edmonstone" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/jake-edmonstone" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">Résumé</a></li>
+        <li><a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a></li>
+      </ul>
+    </div>
+
+    <nav class="tabs" role="tablist">
+      <button id="tab-about" class="tab active" data-target="about" role="tab" aria-controls="about" aria-selected="true">About</button>
+      <button id="tab-projects" class="tab" data-target="projects" role="tab" aria-controls="projects" aria-selected="false">Projects</button>
+      <button id="tab-course-notes" class="tab" data-target="course-notes" role="tab" aria-controls="course-notes" aria-selected="false">Course Notes</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="section active" role="tabpanel" aria-labelledby="tab-about">
+      <h2>About</h2>
+      <p>Hi, I'm Jake Edmonstone, a fourth year pure mathematics and computer science student at the University of Waterloo</p>
+    </section>
+
+    <section id="projects" class="section" role="tabpanel" aria-labelledby="tab-projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article>
+          <h3><a href="https://github.com/jake-edmonstone/Chess" target="_blank" rel="noopener noreferrer">Chess</a></h3>
+          <video autoplay loop muted playsinline width="600" height="601">
+            <source src="images/chess_demo.webm" type="video/webm">
+          </video>
+          <p>A fully functional chess game in C++ using OOP, with four difficulty levels and modular structure.</p>
+        </article>
+
+        <article>
+          <h3><a href="https://github.com/jake-edmonstone/WLP4-Compiler" target="_blank" rel="noopener noreferrer">WLP4 Compiler</a></h3>
+          <p>A C++ compiler for WLP4, a C-like language, that generates MIPS assembly. Includes scanning, parsing, type checking, and codegen.</p>
+        </article>
+
+        <article>
+          <h3><a href="https://github.com/jake-edmonstone/Sudoku-to-SAT-Reduction" target="_blank" rel="noopener noreferrer">Sudoku to SAT Reduction</a></h3>
+          <p>A C++ project that performs a Karp reduction from 9×9 Sudoku to SAT and decodes SAT solver assignments into solved grids.</p>
+        </article>
+
+        <article>
+          <h3><a href="https://github.com/jake-edmonstone/Gravity-and-Collision-Simulator" target="_blank" rel="noopener noreferrer">Gravity and Collision Simulator</a></h3>
+          <video autoplay loop muted playsinline width="600" height="346">
+            <source src="images/balls_demo.webm" type="video/webm">
+          </video>
+          <p>Simulates bouncing balls using vector math and collision detection in 2D space. Written in Python.</p>
+        </article>
+
+        <article>
+          <h3><a href="https://github.com/jake-edmonstone/Conway-s-Game-Of-Life" target="_blank" rel="noopener noreferrer">Game of Life</a></h3>
+          <video autoplay loop muted playsinline width="600" height="346">
+            <source src="images/life_demo.webm" type="video/webm">
+          </video>
+          <p>Conway's Game of Life in Python using 2D arrays and stateful logic to evolve the grid over time.</p>
+        </article>
       </div>
+    </section>
 
-      <nav class="tabs" role="tablist">
-        <button class="tab active" data-target="about" role="tab" aria-controls="about" aria-selected="true">About</button>
-        <button class="tab" data-target="projects" role="tab" aria-controls="projects" aria-selected="false">Projects</button>
-        <button class="tab" data-target="course-notes" role="tab" aria-controls="course-notes" aria-selected="false">Course Notes</button>
-      </nav>
-    </header>
+    <section id="course-notes" class="section" role="tabpanel" aria-labelledby="tab-course-notes">
+      <h2>Course Notes</h2>
+      <ul class="notes-list">
+        <li><a href="pmath347-notes.pdf">PMATH 347</a> <span class="file-meta">(PDF, 2.0 MB)</span></li>
+        <li><a href="pmath367-notes.pdf">PMATH 367</a> <span class="file-meta">(PDF, 1.2 MB)</span></li>
+      </ul>
+    </section>
+  </main>
 
-    <main>
-      <section id="about" class="section active">
-        <h2>About</h2>
-        <p>Hi, I'm Jake Edmonstone, a fourth year pure mathematics and computer science student at the University of Waterloo</p>
-      </section>
-
-      <section id="projects" class="section" hidden>
-        <h2>Projects</h2>
-        <div class="grid">
-          <article>
-            <h3><a href="https://github.com/jake-edmonstone/Chess">Chess</a></h3>
-            <img src="images/chess_demo.gif" alt="Chess project demo" loading="lazy" decoding="async" width="640" height="360">
-            <p>A fully functional chess game in C++ using OOP, with four difficulty levels and modular structure.</p>
-          </article>
-
-          <article>
-            <h3><a href="https://github.com/jake-edmonstone/WLP4-Compiler">WLP4 Compiler</a></h3>
-            <p>A C++ compiler for WLP4, a C-like language, that generates MIPS assembly. Includes scanning, parsing, type checking, and codegen.</p>
-          </article>
-
-          <article>
-            <h3><a href="https://github.com/jake-edmonstone/Sudoku-to-SAT-Reduction">Sudoku to SAT Reduction</a></h3>
-            <p>A C++ project that performs a Karp reduction from 9×9 Sudoku to SAT and decodes SAT solver assignments into solved grids.</p>
-          </article>
-
-          <article>
-            <h3><a href="https://github.com/jake-edmonstone/Gravity-and-Collision-Simulator">Gravity and Collision Simulator</a></h3>
-            <img src="images/balls_demo.gif" alt="Bouncing balls demo" loading="lazy" decoding="async" width="640" height="360">
-            <p>Simulates bouncing balls using vector math and collision detection in 2D space. Written in Python.</p>
-          </article>
-
-          <article>
-            <h3><a href="https://github.com/jake-edmonstone/Conway-s-Game-Of-Life">Game of Life</a></h3>
-            <img src="images/life_demo.gif" alt="Game of Life demo" loading="lazy" decoding="async" width="640" height="360">
-            <p>Conway’s Game of Life in Python using 2D arrays and stateful logic to evolve the grid over time.</p>
-          </article>
-        </div>
-      </section>
-      <section id="course-notes" class="section" hidden>
-        <h2>Course Notes</h2>
-        <h4><a href="pmath347-notes.pdf">PMATH 347</a></h4>
-        <h4><a href="pmath367-notes.pdf">PMATH 367</a></h4>
-      </section>
-    </main>
-
-    <script>
-    const tabs=[...document.querySelectorAll(".tab")];
-    const sections=[...document.querySelectorAll(".section")];
-    tabs.forEach(tab=>{
-      tab.addEventListener("click",()=>{
-        tabs.forEach(t=>{t.classList.remove("active");t.setAttribute("aria-selected","false")});
-        sections.forEach(s=>{s.classList.remove("active");s.hidden=true});
-        tab.classList.add("active");tab.setAttribute("aria-selected","true");
-        const el=document.getElementById(tab.dataset.target);el.classList.add("active");el.hidden=false;
+  <script>
+    const tabs = [...document.querySelectorAll(".tab")];
+    const sections = [...document.querySelectorAll(".section")];
+    function activate(id) {
+      tabs.forEach(t => { t.classList.remove("active"); t.setAttribute("aria-selected", "false") });
+      sections.forEach(s => { s.classList.remove("active") });
+      const tab = tabs.find(t => t.dataset.target === id);
+      if (tab) {
+        tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
+        document.getElementById(id).classList.add("active");
+      }
+    }
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        location.hash = tab.dataset.target;
       });
     });
-    </script>
-  </body>
+    window.addEventListener("hashchange", () => activate(location.hash.slice(1)));
+    if (location.hash) activate(location.hash.slice(1));
+  </script>
+</body>
 </html>
