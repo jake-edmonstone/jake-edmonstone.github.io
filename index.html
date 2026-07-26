@@ -79,6 +79,9 @@
     .notes-list li { margin-bottom: .75rem }
     .notes-list a { font-size: 1.1rem }
     .file-meta { color: #666; font-size: .85rem }
+    .research-entry { max-width: 720px }
+    .research-meta { color: #666; margin-bottom: .5rem }
+    .research-links { display: flex; gap: 1rem; margin-top: .75rem }
   </style>
 </head>
 <body>
@@ -89,13 +92,14 @@
         <li><a href="mailto:jbedmons@uwaterloo.ca" title="Email">Email</a></li>
         <li><a href="https://github.com/jake-edmonstone" target="_blank" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/jake-edmonstone" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">Résumé</a></li>
-        <!-- <li><a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a></li> -->
+        <li><a href="documents/resume.pdf" target="_blank" rel="noopener noreferrer">Résumé</a></li>
+        <!-- <li><a href="documents/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a></li> -->
       </ul>
     </div>
 
     <nav class="tabs" role="tablist">
       <button id="tab-about" class="tab active" data-target="about" role="tab" aria-controls="about" aria-selected="true">About</button>
+      <button id="tab-research" class="tab" data-target="research" role="tab" aria-controls="research" aria-selected="false">Research</button>
       <button id="tab-projects" class="tab" data-target="projects" role="tab" aria-controls="projects" aria-selected="false">Projects</button>
       <button id="tab-course-notes" class="tab" data-target="course-notes" role="tab" aria-controls="course-notes" aria-selected="false">Course Notes</button>
     </nav>
@@ -105,6 +109,20 @@
     <section id="about" class="section active" role="tabpanel" aria-labelledby="tab-about">
       <h2>About</h2>
       <p>Hi, I'm Jake Edmonstone, a fourth year pure mathematics and computer science student at the University of Waterloo</p>
+    </section>
+
+    <section id="research" class="section" role="tabpanel" aria-labelledby="tab-research">
+      <h2>Research</h2>
+      <article class="research-entry">
+        <h3><a href="documents/research/drp-report.pdf" target="_blank" rel="noopener noreferrer">Iteration of Linear Differential Operators</a></h3>
+        <p class="research-meta">University of Waterloo Directed Research Program · 2026</p>
+        <p>Joint work with Matthew Tchouikine, mentored by Paul Cusson. We studied pointwise limits of iterated linear differential operators and conditions under which the limit is a fixed point of the operator.</p>
+        <p class="research-links">
+          <a href="documents/research/drp-report.pdf" target="_blank" rel="noopener noreferrer">Read report</a>
+          <a href="documents/research/drp-presentation.pdf" target="_blank" rel="noopener noreferrer">View slides</a>
+          <a href="https://github.com/matt4tch/drp-presentation" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </article>
     </section>
 
     <section id="projects" class="section" role="tabpanel" aria-labelledby="tab-projects">
@@ -149,10 +167,10 @@
     <section id="course-notes" class="section" role="tabpanel" aria-labelledby="tab-course-notes">
       <h2>Course Notes</h2>
       <ul class="notes-list">
-        <li><a href="pmath352-notes.pdf">PMATH 352 — Complex Analysis</a></li>
-        <li><a href="pmath450-notes.pdf">PMATH 450 — Measure Theory</a></li>
-        <li><a href="pmath347-notes.pdf">PMATH 347 — Groups and Rings</a></li>
-        <li><a href="pmath367-notes.pdf">PMATH 367 — Topology</a></li>
+        <li><a href="documents/course-notes/pmath352-notes.pdf">PMATH 352 — Complex Analysis</a></li>
+        <li><a href="documents/course-notes/pmath450-notes.pdf">PMATH 450 — Measure Theory</a></li>
+        <li><a href="documents/course-notes/pmath347-notes.pdf">PMATH 347 — Groups and Rings</a></li>
+        <li><a href="documents/course-notes/pmath367-notes.pdf">PMATH 367 — Topology</a></li>
       </ul>
     </section>
   </main>
